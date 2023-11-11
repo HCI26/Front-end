@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="people-style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <svg class="svg-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" viewBox="0 0 1080 800" xml:space="preserve">
+            <desc>Created with Fabric.js 5.2.4</desc>
+            <defs>
+            </defs>
+            <g transform="matrix(0.55 0 0 -0.55 553.03 106.56)">
+                <path class="logo-elements"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1;"
+                    vector-effect="non-scaling-stroke" transform=" translate(-1500, -2124.5)"
+                    d="M 1430 2269 C 1353 2229 1277 2217 1185 2229 C 1144 2235 1094 2246 1075 2254 L 1040 2269 L 1040 2109 L 1040 1950 L 1065 1950 L 1089 1950 L 1087 2075 L 1085 2199 L 1125 2192 C 1147 2188 1208 2185 1260 2186 C 1341 2186 1365 2190 1420 2214 C 1456 2230 1492 2242 1500 2242 C 1508 2242 1544 2230 1580 2214 C 1634 2191 1660 2186 1735 2186 C 1785 2185 1845 2188 1870 2193 L 1915 2200 L 1913 2075 L 1910 1950 L 1935 1950 L 1960 1950 L 1960 2109 L 1960 2269 L 1925 2255 C 1906 2247 1859 2235 1820 2230 C 1728 2217 1645 2230 1564 2270 C 1530 2286 1499 2299 1494 2299 C 1489 2298 1460 2284 1430 2269 z"
+                    stroke-linecap="round" />
+            </g>
+            <g transform="matrix(0.55 0 0 -0.55 553.49 222.69)">
+                <path class="logo-elements"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1;"
+                    vector-effect="non-scaling-stroke" transform=" translate(-1499.89, -1914.54)"
+                    d="M 1382 2051 C 1294 2018 1210 1955 1224 1932 C 1227 1927 1250 1917 1276 1910 C 1332 1894 1426 1835 1462 1792 C 1477 1774 1494 1760 1500 1760 C 1506 1760 1523 1774 1538 1792 C 1574 1835 1668 1894 1724 1910 C 1750 1917 1773 1927 1776 1932 C 1787 1949 1727 2000 1660 2032 C 1575 2073 1463 2081 1382 2051 z M 1647 1994 C 1713 1961 1722 1945 1684 1936 C 1644 1926 1581 1886 1537 1845 L 1498 1809 L 1465 1843 C 1428 1881 1357 1925 1317 1935 C 1283 1944 1283 1955 1316 1977 C 1409 2038 1545 2045 1647 1994 z"
+                    stroke-linecap="round" />
+            </g>
+            <g transform="matrix(0.55 0 0 -0.55 552.9 357.7)">
+                <path class="logo-elements"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1;"
+                    vector-effect="non-scaling-stroke" transform=" translate(-1499.74, -1670.01)"
+                    d="M 1043 1875 C 1035 1852 1045 1846 1102 1840 L 1154 1835 L 1155 1760 C 1156 1670 1185 1605 1251 1546 C 1424 1389 1714 1434 1818 1634 C 1839 1675 1844 1700 1845 1760 L 1846 1835 L 1898 1840 C 1955 1846 1965 1852 1956 1875 C 1950 1892 1932 1891 1825 1868 C 1702 1842 1563 1735 1517 1631 L 1498 1587 L 1473 1639 C 1419 1753 1285 1847 1135 1875 C 1042 1893 1051 1893 1043 1875 z M 1240 1805 C 1274 1787 1275 1783 1255 1756 C 1224 1715 1248 1642 1301 1614 C 1332 1598 1386 1598 1423 1614 C 1436 1621 1443 1615 1454 1589 C 1462 1570 1470 1542 1472 1525 C 1475 1496 1473 1495 1440 1498 C 1356 1505 1252 1579 1214 1658 C 1188 1714 1182 1820 1205 1820 C 1208 1820 1224 1813 1240 1805 z M 1804 1754 C 1804 1720 1796 1679 1786 1658 C 1748 1579 1654 1512 1556 1495 L 1517 1489 L 1524 1529 C 1533 1590 1551 1622 1569 1614 C 1604 1598 1668 1598 1699 1614 C 1758 1645 1776 1725 1733 1772 C 1718 1789 1719 1791 1751 1804 C 1770 1813 1790 1818 1795 1816 C 1801 1814 1805 1786 1804 1754 z M 1335 1750 C 1339 1744 1336 1733 1330 1725 C 1311 1702 1337 1677 1372 1682 C 1392 1685 1404 1681 1410 1669 C 1430 1633 1345 1628 1304 1663 C 1281 1683 1278 1691 1284 1723 C 1289 1750 1296 1760 1310 1760 C 1320 1760 1332 1755 1335 1750 z M 1714 1727 C 1722 1705 1720 1695 1703 1672 C 1686 1649 1676 1645 1634 1645 C 1597 1645 1585 1649 1585 1660 C 1585 1670 1598 1677 1625 1680 C 1661 1685 1665 1688 1666 1715 C 1668 1760 1669 1762 1687 1758 C 1697 1756 1709 1742 1714 1727 z"
+                    stroke-linecap="round" />
+            </g>
+            <g transform="matrix(1 0 0 1 540 721.04)" style="filter: url(#SVGID_179);"
+                id="97b2efdb-054a-43ab-90b5-b80974baa43e">
+                <filter id="SVGID_179" y="-24%" height="148%" x="-21%" width="142%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="4"></feGaussianBlur>
+                    <feOffset dx="0" dy="0" result="oBlur"></feOffset>
+                    <feFlood flood-color="rgb(0,0,0)" flood-opacity="1" />
+                    <feComposite in2="oBlur" operator="in" />
+                    <feMerge>
+                        <feMergeNode></feMergeNode>
+                        <feMergeNode in="SourceGraphic"></feMergeNode>
+                    </feMerge>
+                </filter>
+                <text xml:space="preserve" font-family="Alegreya" font-size="194" font-style="normal" font-weight="900"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; margin-top: 150px; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 0.76; white-space: pre;">
+                    <tspan x="-528.69" y="60.94">O</tspan>
+                    <tspan x="-352.57" y="60.94">B</tspan>
+                    <tspan x="-197.95" y="60.94">S</tspan>
+                    <tspan x="-64.84" y="60.94">E</tspan>
+                    <tspan x="89.78" y="60.94">R</tspan>
+                    <tspan x="248.28" y="60.94">V</tspan>
+                    <tspan x="388.59" y="60.94">A</tspan>
+                </text>
+            </g>
+            <g transform="matrix(0.55 0 0 -0.55 553.22 505.16)">
+                <path class="logo-elements"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1;"
+                    vector-effect="non-scaling-stroke" transform=" translate(-1500, -1403.5)"
+                    d="M 1111 1558 C 1145 1494 1206 1416 1269 1358 C 1341 1291 1454 1227 1500 1227 C 1544 1227 1657 1290 1725 1353 C 1785 1407 1859 1500 1889 1558 C 1900 1578 1898 1580 1876 1580 C 1857 1580 1842 1565 1806 1511 C 1731 1399 1597 1291 1512 1274 C 1444 1260 1279 1384 1194 1511 C 1158 1565 1143 1580 1124 1580 C 1102 1580 1100 1578 1111 1558 z"
+                    stroke-linecap="round" />
+            </g>
+        </svg>
+        <ul>
+            <li>
+                <a class="nav-link" href="index.html">
+                    <svg class="svg-icon home-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="icon-outline" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M21.5315 11.5857L20.75 10.9605V21.25H22C22.4142 21.25 22.75 21.5858 22.75 22C22.75 22.4143 22.4142 22.75 22 22.75H2.00003C1.58581 22.75 1.25003 22.4143 1.25003 22C1.25003 21.5858 1.58581 21.25 2.00003 21.25H3.25003V10.9605L2.46855 11.5857C2.1451 11.8445 1.67313 11.792 1.41438 11.4686C1.15562 11.1451 1.20806 10.6731 1.53151 10.4144L9.65742 3.91366C11.027 2.818 12.9731 2.818 14.3426 3.91366L22.4685 10.4144C22.792 10.6731 22.8444 11.1451 22.5857 11.4686C22.3269 11.792 21.855 11.8445 21.5315 11.5857ZM12 6.75004C10.4812 6.75004 9.25003 7.98126 9.25003 9.50004C9.25003 11.0188 10.4812 12.25 12 12.25C13.5188 12.25 14.75 11.0188 14.75 9.50004C14.75 7.98126 13.5188 6.75004 12 6.75004ZM13.7459 13.3116C13.2871 13.25 12.7143 13.25 12.0494 13.25H11.9507C11.2858 13.25 10.7129 13.25 10.2542 13.3116C9.76255 13.3777 9.29128 13.5268 8.90904 13.9091C8.52679 14.2913 8.37773 14.7626 8.31163 15.2542C8.24996 15.7129 8.24999 16.2858 8.25003 16.9507L8.25003 21.25H9.75003H14.25H15.75L15.75 16.9507L15.75 16.8271C15.7498 16.2146 15.7462 15.6843 15.6884 15.2542C15.6223 14.7626 15.4733 14.2913 15.091 13.9091C14.7088 13.5268 14.2375 13.3777 13.7459 13.3116Z"
+                            fill="#ffffff" />
+                        <g opacity="0.5">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10.75 9.5C10.75 8.80964 11.3096 8.25 12 8.25C12.6904 8.25 13.25 8.80964 13.25 9.5C13.25 10.1904 12.6904 10.75 12 10.75C11.3096 10.75 10.75 10.1904 10.75 9.5Z"
+                                fill="#ffffff" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10.75 9.5C10.75 8.80964 11.3096 8.25 12 8.25C12.6904 8.25 13.25 8.80964 13.25 9.5C13.25 10.1904 12.6904 10.75 12 10.75C11.3096 10.75 10.75 10.1904 10.75 9.5Z"
+                                fill="#ffffff" />
+                        </g>
+                        <path opacity="0.5"
+                            d="M12.0494 13.25C12.7142 13.25 13.2871 13.2499 13.7458 13.3116C14.2375 13.3777 14.7087 13.5268 15.091 13.909C15.4732 14.2913 15.6223 14.7625 15.6884 15.2542C15.7462 15.6842 15.7498 16.2146 15.75 16.827L15.75 21.25H8.25L8.25 16.9506C8.24997 16.2858 8.24993 15.7129 8.31161 15.2542C8.37771 14.7625 8.52677 14.2913 8.90901 13.909C9.29126 13.5268 9.76252 13.3777 10.2542 13.3116C10.7129 13.2499 11.2858 13.25 11.9506 13.25H12.0494Z"
+                            fill="#ffffff" />
+                        <path opacity="0.5"
+                            d="M16 3H18.5C18.7761 3 19 3.22386 19 3.5L19 7.63955L15.5 4.83955V3.5C15.5 3.22386 15.7239 3 16 3Z"
+                            fill="#ffffff" />
+                    </svg>
+                    <span class="link-text">Home</span>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="people.html">
+                    <svg class="svg-icon people-icon" viewBox="0 0 48 48" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="icon-outline"
+                            d="M3 29.4C3 25.144 11.6613 23 16 23C20.3387 23 29 25.144 29 29.4V35H3V29.4Z"
+                            fill="#ffffff" />
+                        <path class="icon-outline"
+                            d="M23 14C23 17.8675 19.8675 21 16 21C12.1325 21 9 17.8675 9 14C9 10.1325 12.1325 7 16 7C19.8675 7 23 10.1325 23 14Z"
+                            fill="#ffffff" />
+                        <path class="icon-outline"
+                            d="M40 18C40 20.7625 37.7625 23 35 23C32.2375 23 30 20.7625 30 18C30 15.2375 32.2375 13 35 13C37.7625 13 40 15.2375 40 18Z"
+                            fill="#ffffff" />
+                        <path class="icon-outline" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M31 35V29.4C31 28.0363 30.4684 26.8885 29.7194 25.9627C31.5696 25.3216 33.584 25 35 25C38.3375 25 45 26.7867 45 30.3333V35H31Z"
+                            fill="#ffffff" />
+                    </svg>
+                    <span class="link-text">People</span>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Settings">
+                    <svg class="svg-icon settings-icon" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="icon-outline" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M14.2788 2.15224C13.9085 2 13.439 2 12.5 2C11.561 2 11.0915 2 10.7212 2.15224C10.2274 2.35523 9.83509 2.74458 9.63056 3.23463C9.53719 3.45834 9.50065 3.7185 9.48635 4.09799C9.46534 4.65568 9.17716 5.17189 8.69017 5.45093C8.20318 5.72996 7.60864 5.71954 7.11149 5.45876C6.77318 5.2813 6.52789 5.18262 6.28599 5.15102C5.75609 5.08178 5.22018 5.22429 4.79616 5.5472C4.47814 5.78938 4.24339 6.1929 3.7739 6.99993C3.30441 7.80697 3.06967 8.21048 3.01735 8.60491C2.94758 9.1308 3.09118 9.66266 3.41655 10.0835C3.56506 10.2756 3.77377 10.437 4.0977 10.639C4.57391 10.936 4.88032 11.4419 4.88029 12C4.88026 12.5581 4.57386 13.0639 4.0977 13.3608C3.77372 13.5629 3.56497 13.7244 3.41645 13.9165C3.09108 14.3373 2.94749 14.8691 3.01725 15.395C3.06957 15.7894 3.30432 16.193 3.7738 17C4.24329 17.807 4.47804 18.2106 4.79606 18.4527C5.22008 18.7756 5.75599 18.9181 6.28589 18.8489C6.52778 18.8173 6.77305 18.7186 7.11133 18.5412C7.60852 18.2804 8.2031 18.27 8.69012 18.549C9.17714 18.8281 9.46533 19.3443 9.48635 19.9021C9.50065 20.2815 9.53719 20.5417 9.63056 20.7654C9.83509 21.2554 10.2274 21.6448 10.7212 21.8478C11.0915 22 11.561 22 12.5 22C13.439 22 13.9085 22 14.2788 21.8478C14.7726 21.6448 15.1649 21.2554 15.3694 20.7654C15.4628 20.5417 15.4994 20.2815 15.5137 19.902C15.5347 19.3443 15.8228 18.8281 16.3098 18.549C16.7968 18.2699 17.3914 18.2804 17.8886 18.5412C18.2269 18.7186 18.4721 18.8172 18.714 18.8488C19.2439 18.9181 19.7798 18.7756 20.2038 18.4527C20.5219 18.2105 20.7566 17.807 21.2261 16.9999C21.6956 16.1929 21.9303 15.7894 21.9827 15.395C22.0524 14.8691 21.9088 14.3372 21.5835 13.9164C21.4349 13.7243 21.2262 13.5628 20.9022 13.3608C20.4261 13.0639 20.1197 12.558 20.1197 11.9999C20.1197 11.4418 20.4261 10.9361 20.9022 10.6392C21.2263 10.4371 21.435 10.2757 21.5836 10.0835C21.9089 9.66273 22.0525 9.13087 21.9828 8.60497C21.9304 8.21055 21.6957 7.80703 21.2262 7C20.7567 6.19297 20.522 5.78945 20.2039 5.54727C19.7799 5.22436 19.244 5.08185 18.7141 5.15109C18.4722 5.18269 18.2269 5.28136 17.8887 5.4588C17.3915 5.71959 16.7969 5.73002 16.3099 5.45096C15.8229 5.17191 15.5347 4.65566 15.5136 4.09794C15.4993 3.71848 15.4628 3.45833 15.3694 3.23463C15.1649 2.74458 14.7726 2.35523 14.2788 2.15224ZM12.5 15C14.1695 15 15.5228 13.6569 15.5228 12C15.5228 10.3431 14.1695 9 12.5 9C10.8305 9 9.47716 10.3431 9.47716 12C9.47716 13.6569 10.8305 15 12.5 15Z"
+                            fill="#ffffff" />
+                    </svg>
+                    <span class="link-text">Settings</span>
+                </a>
+            </li>
+        </ul>
+        <a class="nav-link logout-button" href="#Logout">
+            <svg class="svg-icon logout-icon" fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path class="icon-outline" d="M16 13v-2H7V8l-5 4 5 4v-3z" />
+                <path class="icon-outline"
+                    d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z" />
+            </svg>
+            <span class="link-text">Log out</span>
+        </a>
+    </nav>
+    <main>
+        <div id="form-container" class="form-container">
+            <form action="#" class="add-visitor-form">
+                <input type="text" placeholder="Name" name="visitor-name">
+                <input type="text" placeholder="Relation" name="visitor-relation">
+                <input type="file" name="images" id="imageInput" multiple>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="visitor-box">
+            <button id="add-visitor-button" class="add-visitor-button">Add visitor</button>
+            <!-- <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div> -->
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/alihassan.jpg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">ali hassan</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/mostafa.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Moustafa Essam</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/youssef.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ahmed Youssef</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <div class="visitor-box">
+            <img src="Visitors/hema.jpeg" alt="">
+            <div class="visitor-text-box">
+                <span class="visitor-name">Ebrahim Alaa</span>
+                <span class="visitor-relation">Friend</span>
+            </div>
+        </div>
+        <!-- <table>
+            <tr>
+                <th>Name</th>
+                <th>Relation</th>
+            </tr>
+            <tr>
+                <td>Ahmed Moustafa</td>
+                <td>Brother</td>
+            </tr>
+        </table> -->
+    </main>
+    <script>
+        document.getElementById('add-visitor-button').addEventListener('click', function (event) {
+            var formContainer = document.getElementById('form-container');
+            formContainer.style.display = "block";
+            event.stopPropagation(); // Stop the event from propagating to the body
+        });
+
+        document.body.addEventListener('click', function (event) {
+            var formContainer = document.getElementById('form-container');
+            // Check if the clicked element is the form or a descendant of the form
+            if (!formContainer.contains(event.target)) {
+                formContainer.style.display = 'none';
+                console.log("clicked outside form");
+            }
+        });
+    </script>
+</body>
+
+</html>
