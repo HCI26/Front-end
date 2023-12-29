@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex" style="background-color: #F4EDEA">
+  <div class="w-full h-full flex" style="background-color: #ffffff">
     <sidebar :userData="userData" />
     <div class="ml-64 flex flex-col w-full h-full ">
       <headerTop />
