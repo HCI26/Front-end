@@ -12,13 +12,13 @@
                         <!-- Form Group (username)-->
                         <div class="m-3">
                             <label class="small m-1" for="inputUsername">Username </label>
-                            <div v-if="!edit" class="A">{{ username }}</div>
+                            <div v-if="!edit" class="A">{{ userData.username }}</div>
                             <input v-if="edit" class="form-control" id="inputUsername" type="text" placeholder="Enter your username">
                         </div>
                         <!-- Form Row-->
                         <div class="m-3">
                             <label class="small m-1" for="inputUsername">Full Name </label>
-                            <div v-if="!edit" class="A">{{ fullname }}</div>
+                            <div v-if="!edit" class="A">{{ userData.fullname }}</div>
                             <input v-if="edit" class="form-control" id="inputUsername" type="text" placeholder="Enter your Fullname">
                         </div>
                         <!-- Form Row        -->
@@ -27,7 +27,7 @@
                             <!-- Form Group (phonenumber)-->
                             <div class="col-md-6">
                                 <label class="small m-1" for="inputPhone">Phone number </label>
-                                <div v-if="!edit" class="A">{{ phonenumber }}</div>
+                                <div v-if="!edit" class="A">{{ userData.phonenumber }}</div>
                                 <input v-if="edit" class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number">
                             </div>
                            
@@ -35,7 +35,7 @@
                         <!-- Form Group (email address)-->
                         <div class="m-3">
                             <label class="small m-1" for="inputEmailAddress">Email address </label>
-                            <div v-if="!edit" class="A">{{ emailaddress }}</div>
+                            <div v-if="!edit" class="A">{{ userData.email }}</div>
                             <input v-if="edit" class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address">
 
                         </div>
@@ -55,21 +55,20 @@
                                 </div>
                                 <div style="margin-right: 750px;" class="col-md-6" >
                                 <label class="small m-1" for="inputGender">Gender </label>
-                                <div class="form-control" id="inputGender" style="border: none  ; padding-left: 5px;  background-color: rgb(243 244 246);">Male</div>
+                                <div class="form-control" id="inputGender" style="border: none  ; padding-left: 5px;  background-color: rgb(243 244 246);">{{userData.gender}}</div>
                                 </div>
                             </div>
                           </div> 
                         <div  class="row gx-3 m-3">
-                            <!-- Form Group (location)-->
                             <div style="display: flex; justify-content: space-between  ; " class="col-md-6">
                                 <div class="col-md-6">
                                 <label class="small m-1" for="inputCity">City </label>
-                                <div v-if="!edit" class="A">{{ city }}</div>
+                                <div v-if="!edit" class="A">{{ userData.city }}</div>
                                 <input v-if="edit" class="form-control" id="inputCity" type="text" placeholder="Enter your location">
                                 </div>
                                 <div style="margin-right: 603px;" class="col-md-6" >
                                 <label class="small m-1" for="inputLocation">Address </label>
-                                <div v-if="!edit" class="A">{{ address }}</div>
+                                <div v-if="!edit" class="A">{{ userData.address }}</div>
                                 <input v-if="edit" style="width: 100%;" class="form-control" id="inputLocation" type="text" placeholder="Enter your location">
                                 </div>
                             </div>
@@ -88,31 +87,26 @@
 
 <script>
 export default {
-    data()
-    {
-        return{
-            edit: false,
-            username :'ah2070643',
-            fullname :'Ali Hassan',
-            password :'09517536248',
-            phonenumber :'01208974686',
-            emailaddress:'ah2070643@gmail.com',
-            birthday :'19/1/2003',
-            gender :'Male',
-            city :'Alexandria',
-            address:'Elhanovil st.omar elmokhtar'
-        }
+  props: {
+    userData: {
+      type: Object,
+      required: true,
     },
-    methods:
-    {
-        editProfile(event) {
-            event.preventDefault();
-            this.edit = true;
-            }
-
-    }
-
-}
+  },
+  data() {
+    return {
+      edit: false,
+    };
+  },
+  methods: {
+    editProfile() {
+      this.edit = true;
+    },
+    saveProfile() {
+      this.edit = false;
+    },
+  },
+};
 </script>
 
 <style>

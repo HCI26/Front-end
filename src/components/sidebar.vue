@@ -8,7 +8,7 @@
         <div class="profile flex justify-center items-center text-center p-5 ">
           <div class="flex flex-col justify-center items-center	 text-center text-white">
             <img src="https://avatars.githubusercontent.com/u/97021587?v=4" class="p-1 w-24 h-24 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 mb-4" alt="Avatar" />
-            <h5 class="text-xl font-medium leading-tight mb-2" style="color: #F4EDEA">{{userData.name}}</h5>
+            <h5 class="text-xl font-medium leading-tight mb-2" style="color: #F4EDEA">{{userData.username}}</h5>
             <p class="text-gray-500">{{userData.email}}</p>
           </div>
         </div>
@@ -22,7 +22,7 @@
           <router-link to="/visitors" class="px-2 flex items-center text-xl space-x-2"><span class="pi pi-users" v-tooltip.right="'Visitors'"></span> <span>Visitors</span></router-link>
         </div>
         <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
-          <router-link to="/setting" class="px-2 flex items-center text-xl space-x-2"><span class="pi pi-slack" v-tooltip.right="'Setting'"></span> <span>Setting</span></router-link>
+          <router-link to="/setting" class="px-2 flex items-center text-xl space-x-2" ><span class="pi pi-slack" v-tooltip.right="'Setting'"></span> <span>Setting</span></router-link>
         </div>
       </div>
       <div class="menu-man text-left px-2 justify-self-end whitespace-nowrap">
@@ -42,6 +42,8 @@ export default {
         required: true,
         },
     },
+  methods: {
+  }
 
 }
 </script>

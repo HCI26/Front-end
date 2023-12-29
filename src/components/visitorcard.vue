@@ -29,7 +29,7 @@
 import EditDialog from '@/components/editdialog'; // Adjust the path accordingly
 
 export default {
-    components: {EditDialog},
+  components: {EditDialog},
   props: {
     visitor: {
       type: Object,
