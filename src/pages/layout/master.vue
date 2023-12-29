@@ -4,39 +4,41 @@
     <div class="ml-64 flex flex-col w-full h-full ">
       <headerTop />
       <div class="w-full h-[calc(100vh-50px)]">
-        <router-view></router-view>
+        <router-view :userData="userData"></router-view>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import headerTop from './../../components/header.vue'
 import sidebar from './../../components/sidebar.vue'
+import UserInfoDTO from '../../DTOs/UserInfoDTO'
 
 export default {
   components: { headerTop, sidebar },
   data() {
     return {
-      userData: {} 
+      userData: new UserInfoDTO({})
     }
   },
-  mounted() {
+  created() {
     this.fetchUserData();
   },
   methods: {
     fetchUserData() {
-      this.userData = {
-        "name": "ahmed",
-        "email": "example@google.com"
-      }
-      // try {
-      //   const response = await fetch('your_backend_api_url');
-      //   const userData = await response.json();
-      //   this.userData = userData;
-      // } catch (error) {
-      //   console.error('Error fetching user data:', error);
-      // }
+      axios.get('http://192.168.1.23:5000/api/user/info')
+        .then((response) => {
+          const userDataFromBackend = response.data;
+          this.userData = new UserInfoDTO(userDataFromBackend);
+          console.log("Loaded");
+
+        })
+        .catch((error) => {
+          console.log("Errrrorrrrrrrrrr")
+          console.log(error);
+        });
     },
   }
 }

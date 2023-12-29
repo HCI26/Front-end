@@ -17,6 +17,8 @@
 
 <script>
 import visitorHistoryCard from '../components/historycard.vue';
+import axios from 'axios';
+import VisitorHistoryDTO from '../DTOs/VisitorHistoryDTO';
 
 export default {
   components: { visitorHistoryCard },
@@ -75,6 +77,9 @@ export default {
       ],
     };
   },
+  created() {
+    this.loadVisitorsHistory();
+  },
   computed: {
     categorizedVisitors() {
       const groupedVisitors = {};
@@ -89,8 +94,20 @@ export default {
 
         groupedVisitors[dateString].push(visitor);
       });
-
       return groupedVisitors;
+    },
+  },
+  methods: {
+    loadVisitorsHistory() {
+      axios.get('https://website-nuxt-back.herokuapp.com/api/history')
+        .then((response) => {
+          const VisitorsHistory = response.data;
+          this.visitors = new VisitorHistoryDTO(VisitorsHistory);
+          console.log("Loaded");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };

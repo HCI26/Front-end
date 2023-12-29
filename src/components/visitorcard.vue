@@ -16,8 +16,7 @@
     </div>
     <EditDialog
       v-if="showEditDialog"
-      :currentName="visitor.name"
-      :currentRelation="visitor.relation"
+      :visitor="visitor"
       functionality = "Update Visitor"
       @save="handleSaveChanges"
       @close="closeEditDialog"
@@ -27,9 +26,9 @@
 
 <script>
 import EditDialog from '@/components/editdialog'; // Adjust the path accordingly
-
+import axios from 'axios';
 export default {
-    components: {EditDialog},
+  components: {EditDialog},
   props: {
     visitor: {
       type: Object,
@@ -56,7 +55,8 @@ export default {
       ],
       showEditDialog: false,
       name: this.visitor.name,
-      relation: this.visitor.relation
+      relation: this.visitor.relation,
+      visitorId: this.visitor.id
     };
   },
   methods: {
@@ -73,6 +73,21 @@ export default {
         this.name = name;
         this.relation = relation;
         this.closeEditDialog();
+    },
+    handleDelete() {
+      const id = this.visitorId;
+      axios.delete(`http://localhost:3000/api/user/visitors/delete/${id}`)
+
+      // axios.post(`http://localhost:3000/api/user/visitors/edit/${visitorId}`, {
+      // })
+      // .then(() => {
+      //   console.log("Loaded");
+      // })
+      // .catch((error) => {
+      //   console.log(error);
+      //   console.error("Error:", this.visitor.id);
+      // });
+
     },
   },
 };

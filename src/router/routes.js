@@ -23,6 +23,7 @@ export default [
         name: 'Setting',
         path: '/setting',
         component: import('./../pages/setting'),
+        props: route => ({ userData: route.params.userData }),
       },
       {
         name: 'Visitors',
