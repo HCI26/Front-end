@@ -16,18 +16,22 @@ export default {
         return {
             visitors: [
                 {
+                    "id": 1,
                     "name": "ahmed",
                     "relation": "firend"
                 },
                 {
+                    "id": 2,
                     "name": "ahmed",
                     "relation": "Brother"
                 },
                 {
+                    "id": 3,
                     "name": "ahmed",
                     "relation": "Father"
                 },
                 {
+                    "id": 4,
                     "name": "ahmed",
                     "relation": "firend"
                 }
@@ -39,7 +43,7 @@ export default {
     },
     methods: {
         loadVisitors() {
-            axios.get('https://website-nuxt-back.herokuapp.com/api/user')
+            axios.get('https://website-nuxt-back.herokuapp.com/api/user/visitors')
             .then((response) => {
                 const visitors = response.data;
                 this.visitors = new VisitorHistoryDTO(visitors);

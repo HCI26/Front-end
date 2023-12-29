@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     fetchUserData() {
-      axios.get('https://website-nuxt-back.herokuapp.com/api/user')
+      axios.get('http://192.168.1.23:5000/api/user/info')
         .then((response) => {
           const userDataFromBackend = response.data;
           this.userData = new UserInfoDTO(userDataFromBackend);
@@ -36,6 +36,7 @@ export default {
 
         })
         .catch((error) => {
+          console.log("Errrrorrrrrrrrrr")
           console.log(error);
         });
     },

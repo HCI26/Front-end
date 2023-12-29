@@ -81,29 +81,47 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   props: {
-    currentName: String,
-    currentRelation: String,
+    visitor: {
+      type: Object,
+      required: true,
+    },
     functionality: String
   },
   data() {
     return {
-      editedName: this.currentName,
-      editedRelation: this.currentRelation,
+      editedName: this.visitor.name,
+      editedRelation: this.visitor.relation,
       uploadedImage: null,
     };
   },
   methods: {
     saveChanges() {
-      this.$emit("save", {
+      const visitorId = this.visitor.id;
+      axios.post(`http://localhost:3000/api/user/visitors/edit/${visitorId}`, {
         name: this.editedName,
         relation: this.editedRelation,
         image: this.uploadedImage,
+      })
+      .then(() => {
+        console.log("Loaded");
+      })
+      .catch((error) => {
+        console.log(error);
+        console.error("Error:", this.visitor.id);
       });
-      if (this.$route.name === "Visitors") {
-        this.$router.go();
-      }
+
+
+      // this.$emit("save", {
+      //   name: this.editedName,
+      //   relation: this.editedRelation,
+      //   image: this.uploadedImage,
+      // });
+      // if (this.$route.name === "Visitors") {
+      //   this.$router.go();
+      // }
 
       this.closeDialog();
     },
