@@ -1,36 +1,43 @@
-export default [
-  {
-    name: "Master",
-    path: "/",
-    component: import('./../pages/layout/master'),
-    // redirect: '/dashboard',
-    children: [
-      {
-        path: '',
-        redirect: '/dashboard',
-      },
-      {
-        name: 'Dashboard',
-        path: '/dashboard',
-        component: import('./../pages/dashboard'),
-      },
-      {
-        name: 'History',
-        path: '/history',
-        component: import('./../pages/history'),
-      },
-      {
-        name: 'Setting',
-        path: '/setting',
-        component: import('./../pages/setting'),
-        props: route => ({ userData: route.params.userData }),
-      },
-      {
-        name: 'Visitors',
-        path: '/visitors',
-        component: import('./../pages/visitors'),
-      }
-    ]
+const routeswithmaster = {
+  name: "Master",
+  path: "/",
+  component: import('./../pages/layout/master'),
+  children: [
+    {
+      path: '',
+      redirect: '/login',
     },
+    {
+      name: 'dashboard',
+      path: '/dashboard',
+      component: import('./../pages/dashboard'),
+    },
+    {
+      name: 'history',
+      path: '/history',
+      component: import('./../pages/history'),
+    },
+    {
+      name: 'setting',
+      path: '/setting',
+      component: () => import('./../pages/setting'),
+    }  
+    
+   ],
+  }
+  
 
-]
+  const routeWithoutMaster3 = {
+    name: 'signup',
+    path: '/signup',
+    component: () => import('./../pages/signup'),
+  };
+  const routeWithoutMaster4 = {
+    name: 'login',
+    path: '/login',
+    component: () => import('./../pages/login'),
+  };
+  
+  
+  
+  export default [routeswithmaster,routeWithoutMaster3,routeWithoutMaster4];
