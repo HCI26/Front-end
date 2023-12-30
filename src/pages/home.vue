@@ -38,15 +38,10 @@
 
 
 <script>
-import homeLogo from './assets/homeLogo2.png';
+
 
 export default {
-  data() {
-    return {
-      projectName: 'Your Project Name',
-      logoPath: homeLogo,
-    };
-  },
+ 
   mounted() {
     document.querySelector('.content').classList.add('fade-in');
   }
