@@ -61,10 +61,10 @@ export default {
   margin-right: 0;
   margin-top: auto;
   margin-bottom: auto;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
-  color: #696f8d;
-  font-family: "Open Sans";
+  color: #000000;
+  font-family:'Courier New', Courier;
   text-align: right;
   
 }

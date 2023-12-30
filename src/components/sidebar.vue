@@ -22,12 +22,12 @@
           <router-link to="/visitors" class="px-2 flex items-center text-xl space-x-2"><span class="pi pi-users" v-tooltip.right="'Visitors'"></span> <span>Visitors</span></router-link>
         </div>
         <div class="  py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
-          <router-link to="/setting" class="px-2 flex items-center text-xl space-x-2" ><span class="pi pi-slack" v-tooltip.right="'Setting'"></span> <span>Setting</span></router-link>
+          <router-link to="/setting" class="px-2 flex items-center text-xl space-x-2" ><span class="pi pi-slack" v-tooltip.right="'Setting'"></span> <span>Settings</span></router-link>
         </div>
       </div>
       <div class="menu-man text-left px-2 justify-self-end whitespace-nowrap">
         <div class="   py-3 rounded-md cursor-pointer text-gray-300 hover:text-white">
-          <a href="https://website-nuxt-front.vercel.app/" target="_blank" class="px-2 flex space-x-2"><span class="pi pi-question" v-tooltip.right="'About Me'"></span> <span>About Me</span></a>
+          <a href="https://website-nuxt-front.vercel.app/" target="_blank" class="px-2 flex space-x-2"><span class="pi pi-question" v-tooltip.right="'About Me'"></span> <span>About us</span></a>
         </div>
       </div>
     </div>
