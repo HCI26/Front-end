@@ -1,7 +1,7 @@
 <template>
   <!-- <div>dash</div> -->
   <div class="flex">
-    <videoStream/>
+    <videoStream :videoUrl="videoUrl"/>
   </div>
   <br>
   <!-- <div class="pt-4">
@@ -21,64 +21,78 @@
 <script>
 // import { mapGetters } from 'vuex';
 import videoStream from './../components/videoplayer.vue'
+import VueCookies from 'vue-cookies';
 // import visitorHistoryCard from '../components/historycard.vue';
 
 export default {
   components: { videoStream },
   data() {
     return {
-      visitors: [
-        {
-          name: 'ahmed',
-          relation: 'friend',
-          date: 1702042966,
-        },
-        {
-          name: 'ahmed',
-          relation: 'friend',
-          date: 1696772566,
-        },
-        {
-          name: 'mohamed',
-          relation: 'friend',
-          date: 1702053766,
-        },
-        {
-          name: 'mahmoud',
-          relation: 'friend',
-          date: 1670517766,
-        },
-        {
-          name: 'mohamed',
-          relation: 'friend',
-          date: 1670517766,
-        },
-        {
-          name: 'mohamed',
-          relation: 'friend',
-          date: 1702053766,
-        },
-        // ... more visitors
-        {
-          name: 'mohamed',
-          relation: 'friend',
-          date: 1702053766,
-        },
-        // ... more visitors
-        {
-          name: 'mohamed',
-          relation: 'friend',
-          date: 1702053766,
-        },
-        // ... more visitors
-        {
-          name: 'mohamed',
-          relation: 'friend',
-          date: 1702053766,
-        },
-        // ... more visitors
-      ],
+      videoUrl: 'http://192.168.50.130:5000/api/video/',
+      token:null
+
+      // visitors: [
+      //   {
+      //     name: 'ahmed',
+      //     relation: 'friend',
+      //     date: 1702042966,
+      //   },
+      //   {
+      //     name: 'ahmed',
+      //     relation: 'friend',
+      //     date: 1696772566,
+      //   },
+      //   {
+      //     name: 'mohamed',
+      //     relation: 'friend',
+      //     date: 1702053766,
+      //   },
+      //   {
+      //     name: 'mahmoud',
+      //     relation: 'friend',
+      //     date: 1670517766,
+      //   },
+      //   {
+      //     name: 'mohamed',
+      //     relation: 'friend',
+      //     date: 1670517766,
+      //   },
+      //   {
+      //     name: 'mohamed',
+      //     relation: 'friend',
+      //     date: 1702053766,
+      //   },
+      //   // ... more visitors
+      //   {
+      //     name: 'mohamed',
+      //     relation: 'friend',
+      //     date: 1702053766,
+      //   },
+      //   // ... more visitors
+      //   {
+      //     name: 'mohamed',
+      //     relation: 'friend',
+      //     date: 1702053766,
+      //   },
+      //   // ... more visitors
+      //   {
+      //     name: 'mohamed',
+      //     relation: 'friend',
+      //     date: 1702053766,
+      //   },
+      //   // ... more visitors
+      // ],
     };
+  },
+  created() {
+    this.token = VueCookies.get('token');
+    if (this.token == null) {
+        this.$router.push('/login');
+    }
+    else{
+      this.videoUrl = this.videoUrl + this.token;
+    }
+    // this.loadVisitorsHistory();
   },
   computed: {
     categorizedVisitors() {
