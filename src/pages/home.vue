@@ -116,18 +116,21 @@ export default {
 }
 .login-link{
   display: inline-block;
-  padding: 10px 20px;
+  padding: 5px 10px;
   font-size: 1rem;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 20px;
   transition: background-color 0.5s ease, transform 0.2s ease;
 }
 
-.get-started-btn:hover, .login-link:hover {
+.get-started-btn:hover {
   transform: scale(1.05);
   background-color: #2980b9;
 }
-
+.login-link:hover{
+  transform: scale(1.1);
+  background-color: #64737d;
+}
 .about-us {
   position: relative;
   margin-top: 400px;
