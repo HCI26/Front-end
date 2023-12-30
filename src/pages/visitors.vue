@@ -29,7 +29,7 @@ export default {
     methods: {
 async loadVisitors() {
     try {
-        const response = await axios.get('http://172.20.10.4:5000/api/user/visitors/get', {
+        const response = await axios.get('http://192.168.50.130:5000/api/user/visitors/get', {
             headers: {
                 Authorization: `Bearer ${this.token}`,
             }

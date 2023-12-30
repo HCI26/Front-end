@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     fetchUserData() {
-      axios.get('http://192.168.255.130:5000/api/user/info', {
+      axios.get('http://192.168.50.130:5000/api/user/info', {
         headers: {
           Authorization: `Bearer ${this.token}`,
         },

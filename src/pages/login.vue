@@ -56,7 +56,7 @@ font-size: larger; margin-top: 20px;" class="mt-1 p-2 w-4/5 border-teal-700 text
             };
 
             try {
-            const response = await fetch('http://172.20.10.4:5000/api/users/login', {
+            const response = await fetch('http://192.168.50.130:5000/api/users/login', {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ font-size: larger; margin-top: 20px;" class="mt-1 p-2 w-4/5 border-teal-700 text
             username: this.username
           }
           try {
-            const response = await fetch('http://172.20.10.4:5000/api/users/reset_password', {
+            const response = await fetch('http://192.168.50.130:5000/api/users/reset_password', {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json',
