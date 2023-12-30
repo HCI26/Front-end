@@ -99,11 +99,59 @@ export default {
   },
   methods: {
     saveChanges() {
+      if (this.functionality === "Add New Visitor") {
+        this.saveNewVisitor()
+        .then(() => {
+            this.closeDialog();
+        })
+      } else {
+        this.editVisitor()
+        .then(() => {
+            this.closeDialog();
+        })
+      }
+    },
+async saveNewVisitor() {
+  const formData = new FormData();
+  formData.append('name', this.editedName);
+  formData.append('relation', this.editedRelation);
+  const blob = this.dataURItoBlob(this.uploadedImage);
+  formData.append('image', blob, 'image.jpg');
+
+  try {
+    await axios.post('http://192.168.255.180:5000/api/user/visitors/add', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    this.closeDialog();
+  } catch (error) {
+    console.error('Error saving new visitor:', error);
+  }
+},
+  dataURItoBlob(dataURI) {
+    const arr = dataURI.split(',');
+    const mime = arr[0].match(/:(.*?);/)[1];
+    const bstr = atob(arr[1]);
+    let n = bstr.length;
+    const u8arr = new Uint8Array(n);
+    while (n--) {
+      u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new Blob([u8arr], { type: mime });
+  },
+    async editVisitor() {
       const visitorId = this.visitor.id;
-      axios.post(`http://localhost:3000/api/user/visitors/edit/${visitorId}`, {
-        name: this.editedName,
-        relation: this.editedRelation,
-        image: this.uploadedImage,
+      const formData = new FormData();
+      formData.append('name', this.editedName);
+      formData.append('relation', this.editedRelation);
+      formData.append('id', visitorId);
+      const blob = this.dataURItoBlob(this.uploadedImage);
+      formData.append('image', blob, 'image.jpg');
+      await axios.post('http://192.168.255.180:5000/api/user/visitors/add', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       })
       .then(() => {
         console.log("Loaded");
@@ -113,20 +161,11 @@ export default {
         console.error("Error:", this.visitor.id);
       });
 
-
-      // this.$emit("save", {
-      //   name: this.editedName,
-      //   relation: this.editedRelation,
-      //   image: this.uploadedImage,
-      // });
-      // if (this.$route.name === "Visitors") {
-      //   this.$router.go();
-      // }
-
-      this.closeDialog();
+      
     },
     closeDialog() {
       this.$emit("close");
+      this.$router.go(); 
     },
     selectImage() {
       document.getElementById("imageInput").click();
