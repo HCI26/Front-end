@@ -18,8 +18,7 @@
     <div>
       <EditDialog
         v-if="showEditDialog"
-        currentName=""
-        currentRelation=""
+        visitor=""
         functionality="Add New Visitor"
         @save="handleSaveChanges"
         @close="closeEditDialog"
@@ -62,7 +61,7 @@ export default {
   },
   computed: {
     currentRouteName() {
-      if (this.$route.name === 'visitors') {
+      if (this.$route.name === 'Visitors') {
         return 'Visitors';
       }
       else if (this.$route.name === 'history') {
@@ -85,6 +84,7 @@ export default {
       this.$refs.menu.toggle(event);
     },
     openEditDialog() {
+      console.log("openEditDialog");
       this.showEditDialog = true;
     },
     closeEditDialog() {
