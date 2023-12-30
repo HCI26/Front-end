@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import routes from "./routes";
 
+
+
 const router = Router();
 export default router;
 
@@ -11,3 +13,4 @@ function Router() {
     });
     return router;
 }
+
