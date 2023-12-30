@@ -10,20 +10,30 @@
 import visitorCard from '../components/visitorcard.vue';
 import axios from 'axios';
 // import VisitorHistoryDTO from '../DTOs/VisitorHistoryDTO';
+import VueCookies from 'vue-cookies';
 export default {
     components: { visitorCard },
     data() {
         return {
-            visitors: []
+            visitors: [],
+            token:null
         };
     },
     created() {
+        this.token = VueCookies.get('token');
+        if (this.token == null) {
+            this.$router.push('/login');
+        }
         this.loadVisitors();
     },
     methods: {
 async loadVisitors() {
     try {
-        const response = await axios.get('http://192.168.255.180:5000/api/user/visitors/get');
+        const response = await axios.get('http://172.20.10.4:5000/api/user/visitors/get', {
+            headers: {
+                Authorization: `Bearer ${this.token}`,
+            }
+        });
         console.log("Loading data");
         console.log(response.data);
 

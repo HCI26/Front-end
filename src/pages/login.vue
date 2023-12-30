@@ -26,7 +26,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 background-color: rgb(19, 109, 134);
 color: aliceblue;
 font-size: larger; margin-top: 20px;" class="mt-1 p-2 w-4/5 border-teal-700 text-teal-700" @click="login"  type="submit" value="log in">
-
+          <a style="color: rgb(19, 109, 134);" class="inline-block mt-5 font-bold text-teal-700" @click="reset">forgot password?</a><br>
           <router-link style="color: rgb(19, 109, 134);" class="inline-block mt-5 font-bold text-teal-700" to="/signup">don't have an acccount?</router-link>
         </form>
         
@@ -56,7 +56,7 @@ font-size: larger; margin-top: 20px;" class="mt-1 p-2 w-4/5 border-teal-700 text
             };
 
             try {
-            const response = await fetch('http://192.168.1.9:5000/api/users/login', {
+            const response = await fetch('http://172.20.10.4:5000/api/users/login', {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json',
@@ -81,10 +81,34 @@ font-size: larger; margin-top: 20px;" class="mt-1 p-2 w-4/5 border-teal-700 text
             if (this.username=="sss")
                 this.$router.push('/dashboard');
         },
-    }
 
-    
-  }
+        async reset(){
+          const userData = {
+            username: this.username
+          }
+          try {
+            const response = await fetch('http://172.20.10.4:5000/api/users/reset_password', {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userData),
+            });
+
+            if (response.ok) {
+                console.log("Response:  ", await response.json());
+                this.$router.push('/login');
+            } else {
+                this.valid = false;
+            }
+            } catch (error) {
+            console.error('Error:', error);
+            }
+        },
+
+
+        }
+    } 
   </script>
   
 <style>

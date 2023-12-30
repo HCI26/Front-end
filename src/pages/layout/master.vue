@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import axios from 'axios'
-import headerTop from './../../components/header.vue'
-import sidebar from './../../components/sidebar.vue'
-import UserInfoDTO from '../../DTOs/UserInfoDTO'
-
+import axios from 'axios';
+import headerTop from './../../components/header.vue';
+import sidebar from './../../components/sidebar.vue';
+import UserInfoDTO from '../../DTOs/UserInfoDTO';
+import VueCookies from 'vue-cookies';
 export default {
   components: { headerTop, sidebar },
   data() {
@@ -24,11 +24,19 @@ export default {
     }
   },
   created() {
+        this.token = VueCookies.get('token');
+        if (this.token == null) {
+            this.$router.push('/login');
+        }
     this.fetchUserData();
   },
   methods: {
     fetchUserData() {
-      axios.get('http://192.168.255.180:5000/api/user/info')
+      axios.get('http://192.168.255.130:5000/api/user/info', {
+        headers: {
+          Authorization: `Bearer ${this.token}`,
+        },
+      })
         .then((response) => {
           const userDataFromBackend = response.data;
           this.userData = new UserInfoDTO(userDataFromBackend);

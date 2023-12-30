@@ -82,6 +82,7 @@
 
 <script>
 import axios from 'axios';
+import VueCookies from 'vue-cookies';
 export default {
   props: {
     visitor: {
@@ -97,6 +98,13 @@ export default {
       uploadedImage: null,
     };
   },
+  created() {
+        this.token = VueCookies.get('token');
+        if (this.token == null) {
+            this.$router.push('/login');
+        }
+    },
+
   methods: {
     saveChanges() {
       if (this.functionality === "Add New Visitor") {
@@ -119,8 +127,9 @@ async saveNewVisitor() {
   formData.append('image', blob, 'image.jpg');
 
   try {
-    await axios.post('http://192.168.255.180:5000/api/user/visitors/add', formData, {
+    await axios.post('http://172.20.10.4:5000/api/user/visitors/add', formData, {
       headers: {
+        Authorization: `Bearer ${this.token}`,
         'Content-Type': 'multipart/form-data',
       },
     });
@@ -148,7 +157,7 @@ async saveNewVisitor() {
       formData.append('id', visitorId);
       const blob = this.dataURItoBlob(this.uploadedImage);
       formData.append('image', blob, 'image.jpg');
-      await axios.post('http://192.168.255.180:5000/api/user/visitors/add', formData, {
+      await axios.post('http://172.20.10.4:5000/api/user/visitors/edit', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

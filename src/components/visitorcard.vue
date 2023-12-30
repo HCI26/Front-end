@@ -3,7 +3,7 @@
 <template>
   <div class="m-3 bg-zinc-200 p-2 border rounded-md">
     <div class="flex items-center">
-      <img src="https://avatars.githubusercontent.com/u/97021587?v=4" class="p-1 w-20 h-20 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 mb-4" alt="Avatar" />
+      <img :src="img_url" class="p-1 w-20 h-20 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 mb-4" alt="Avatar" />
       <div class="ml-4 text-justify max-w-full">
         <div class="font-bold text-xl text-left border-b">{{ name }}</div>
         <div class="text-left py-2">{{ relation }}</div>
@@ -27,6 +27,7 @@
 <script>
 import EditDialog from '@/components/editdialog'; // Adjust the path accordingly
 import axios from 'axios';
+import VueCookies from 'vue-cookies';
 export default {
   components: {EditDialog},
   props: {
@@ -56,7 +57,9 @@ export default {
       showEditDialog: false,
       name: this.visitor.name,
       relation: this.visitor.relation,
-      visitorId: this.visitor.id
+      visitorId: this.visitor.id,
+      image_path: this.visitor.image_path,
+      img_url: "http://172.20.10.4:5000/" + this.visitor.img_path
     };
   },
   methods: {
@@ -76,17 +79,17 @@ export default {
     },
     handleDelete() {
       const id = this.visitorId;
-      axios.delete(`http://localhost:3000/api/user/visitors/delete/${id}`)
+      const token = VueCookies.get('token');
 
-      // axios.post(`http://localhost:3000/api/user/visitors/edit/${visitorId}`, {
-      // })
-      // .then(() => {
-      //   console.log("Loaded");
-      // })
-      // .catch((error) => {
-      //   console.log(error);
-      //   console.error("Error:", this.visitor.id);
-      // });
+      axios.delete(`http://172.20.10.4:5000/api/user/visitors/delete/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then(() => {
+        this.$router.go;
+      })
+
 
     },
   },

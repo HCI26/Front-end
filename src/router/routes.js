@@ -5,7 +5,7 @@ const routeswithmaster = {
   children: [
     {
       path: '',
-      redirect: '/login',
+      redirect: '/home',
     },
     {
       name: 'dashboard',
@@ -28,8 +28,6 @@ const routeswithmaster = {
       component: import('./../pages/visitors'),
     },
     
-
-    
    ],
   }
   
@@ -49,7 +47,6 @@ const routeswithmaster = {
     path: '/home',
     component: () => import('./../pages/home'),
   };
-  
   
   
   export default [routeswithmaster,routeWithoutMaster3,routeWithoutMaster4,routeWithoutMaster5];
