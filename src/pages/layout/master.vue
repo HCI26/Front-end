@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     fetchUserData() {
-      axios.get('http://192.168.1.23:5000/api/user/info')
+      axios.get('http://192.168.255.180:5000/api/user/info')
         .then((response) => {
           const userDataFromBackend = response.data;
           this.userData = new UserInfoDTO(userDataFromBackend);

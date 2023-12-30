@@ -9,50 +9,33 @@
 <script>
 import visitorCard from '../components/visitorcard.vue';
 import axios from 'axios';
-import VisitorHistoryDTO from '../DTOs/VisitorHistoryDTO';
+// import VisitorHistoryDTO from '../DTOs/VisitorHistoryDTO';
 export default {
     components: { visitorCard },
     data() {
         return {
-            visitors: [
-                {
-                    "id": 1,
-                    "name": "ahmed",
-                    "relation": "firend"
-                },
-                {
-                    "id": 2,
-                    "name": "ahmed",
-                    "relation": "Brother"
-                },
-                {
-                    "id": 3,
-                    "name": "ahmed",
-                    "relation": "Father"
-                },
-                {
-                    "id": 4,
-                    "name": "ahmed",
-                    "relation": "firend"
-                }
-                ]
+            visitors: []
         };
     },
     created() {
         this.loadVisitors();
     },
     methods: {
-        loadVisitors() {
-            axios.get('https://website-nuxt-back.herokuapp.com/api/user/visitors')
-            .then((response) => {
-                const visitors = response.data;
-                this.visitors = new VisitorHistoryDTO(visitors);
-                console.log("Loaded");
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-        }
+async loadVisitors() {
+    try {
+        const response = await axios.get('http://192.168.255.180:5000/api/user/visitors/get');
+        console.log("Loading data");
+        console.log(response.data);
+
+        // Transform the response data to match the desired structure
+        const transformedVisitors = response.data.visitors;
+        this.visitors = transformedVisitors;
+        console.log(this.visitors); // Move this line here
+        console.log("Loaded");
+    } catch (error) {
+        console.error(error);
+    }
+}
     }
 
 }
