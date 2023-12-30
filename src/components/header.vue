@@ -1,30 +1,30 @@
 <template>
-  <div class="w-full bg-gray-100 top-0">
+  <div class="header">
     <div class="flex justify-between items-center h-[50px]">
-      <div class="p-4 cursor-pointer  hover:bg-gray-50" @click="openEditDialog">
+      <!-- Check if the current route name is "visitor" before rendering the button -->
+      <div v-if="currentRouteName === 'Visitors'" class="p-4 cursor-pointer hover:bg-gray-50" @click="openEditDialog">
         <i class="pi pi-plus"> Add Visitor</i>
       </div>
 
-      <div class="py-5">
-        <span class="text-center">{{currentRouteName}}</span>
-        <!-- <InputText type="text" v-model="value" class="h-[40px]" :placeholder="currentRouteName" /> -->
+      <div class="flex-1 flex items-center justify-center">
+        <span class="router-name">{{currentRouteName}}</span>
       </div>
       <div class="flex space-x-3 items-center justify-center px-3">
-        <div class="text-md">User</div>
+        <div class="user" @click="toggle">User</div>
         <Avatar icon="pi pi-user" class="mr-2" style="background-color:#9c27b0; color: #ffffff" shape="circle" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" />
         <Menu id="overlay_menu" ref="menu" :model="items" :popup="true" />
       </div>
     </div>
     <div>
       <EditDialog
-      v-if="showEditDialog"
-      currentName=""
-      currentRelation=""
-      functionality = "Add New Visitor"
-      @save="handleSaveChanges"
-      @close="closeEditDialog"
+        v-if="showEditDialog"
+        currentName=""
+        currentRelation=""
+        functionality="Add New Visitor"
+        @save="handleSaveChanges"
+        @close="closeEditDialog"
       />
-      </div>
+    </div>
   </div>
 </template>
 
@@ -62,7 +62,22 @@ export default {
   },
   computed: {
     currentRouteName() {
-      return this.$route.name;
+      if (this.$route.name === 'visitors') {
+        return 'Visitors';
+      }
+      else if (this.$route.name === 'history') {
+        return 'History';
+      }
+      else if (this.$route.name === 'dashboard') {
+        return 'Dashboard';
+      }
+      else if (this.$route.name === 'setting') {
+        return 'Settings';
+      }
+      else {
+        return 'Home';
+      }
+
     }
   },
   methods: {
@@ -90,5 +105,49 @@ export default {
 </script>
 
 <style>
+.router-name {
+  font-size: 1.8rem; /* Increased for prominence */
+  font-weight: 500;
+  text-align: center;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  color: #333; /* Example color, adjust as needed */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Optional shadow for depth */
+}
+
+@media (max-width: 600px) {
+  .router-name {
+    font-size: 1.5rem; /* Smaller size for mobile devices */
+  }
+}
+.header{
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(200, 128, 96, 0.1); /* Soft shadow for depth */
+  text-align: center; /* Center-align text for balance */
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; /* System font-stack */
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+}
+
+.mr-2:hover {
+  transform: translateY(-2px); /* Slight lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+
+}
+  .user{
+  cursor: pointer; /* Change cursor to indicate interactivity */
+  font-size: 1.2rem; /* Increased for prominence */
+  font-weight: 500;
+  text-align: center;
+  color: #333; /* Example color, adjust as needed */
+}
+.user:hover {
+  transform: translateY(-2px); /* Slight lift effect on hover */
+  box-shadow: 0 6px 12px rgba(105, 100, 100, 0.2); /* Increased shadow on hover */
+}
+
 
 </style>
