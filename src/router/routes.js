@@ -27,11 +27,7 @@ const routeswithmaster = {
       path: '/visitors',
       component: import('./../pages/visitors'),
     },
-    {
-      name: 'Home',
-      path: '/home',
-      component: import('./../pages/home'),
-    },    
+    
 
     
    ],
@@ -48,7 +44,12 @@ const routeswithmaster = {
     path: '/login',
     component: () => import('./../pages/login'),
   };
+  const routeWithoutMaster5 = {
+    name: 'Home',
+    path: '/home',
+    component: () => import('./../pages/home'),
+  };
   
   
   
-  export default [routeswithmaster,routeWithoutMaster3,routeWithoutMaster4];
+  export default [routeswithmaster,routeWithoutMaster3,routeWithoutMaster4,routeWithoutMaster5];
