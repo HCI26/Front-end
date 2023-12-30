@@ -21,7 +21,18 @@ const routeswithmaster = {
       name: 'setting',
       path: '/setting',
       component: () => import('./../pages/setting'),
-    }  
+    },
+    {
+      name: 'Visitors',
+      path: '/visitors',
+      component: import('./../pages/visitors'),
+    },
+    {
+      name: 'Home',
+      path: '/home',
+      component: import('./../pages/home'),
+    },    
+
     
    ],
   }
