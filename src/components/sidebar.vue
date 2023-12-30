@@ -13,7 +13,7 @@
           </div>
         </div>
         <div class="   py-3 rounded-sm cursor-pointer text-gray-300 hover:text-white">
-          <router-link to="/" class="px-2 flex items-center text-xl space-x-2"><span class="pi pi-microsoft" v-tooltip.right="'Dashboard'"></span> <span>Dashboard</span></router-link>
+          <router-link to="/dashboard" class="px-2 flex items-center text-xl space-x-2"><span class="pi pi-microsoft" v-tooltip.right="'Dashboard'"></span> <span>Dashboard</span></router-link>
         </div>
         <div class="   py-3 rounded-md cursor-pointer  text-gray-300 hover:text-white">
           <router-link to="/history" class="px-2 flex items-center text-xl space-x-2"><span class="pi pi-history " v-tooltip.right="'History'"></span> <span>History</span></router-link>
